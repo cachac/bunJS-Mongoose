@@ -24,5 +24,14 @@ curl -X POST -H "Content-Type: application/json"  --data-raw '{ "username":"TEST
 curl localhost:3000/get-users
 ```
 
-# Issues
-Wait for 5 minutes running the app
+# 5. Issues
+Wait for 5 minutes running the app and then try to get users.
+```
+curl localhost:3000/get-users
+```
+
+Result:
+~~~
+error: connection 2 to <SERVER_IP_ADDRESS>:27017 closed
+~~~
+
