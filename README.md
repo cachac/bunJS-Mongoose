@@ -45,5 +45,7 @@ hey  -z 3s  -c 3   -t 30  -m  POST -T "application/json"  -d '{ "username":"${da
 
 hey  -z 3s  -c 3   -t 30  -m  POST -T "application/json"  -d '{ "_id":"65baac63a989afefdc149a7e" }' http://localhost:$PORT/get-id
 
+hey  -z 3s  -c 3   -t 30  -m  POST -T "application/json"  -d '{ "username":"carlos" }' http://localhost:$PORT/get-id
+
 
 

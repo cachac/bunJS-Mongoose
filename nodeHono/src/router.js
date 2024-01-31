@@ -20,8 +20,8 @@ router.post('/set-user', async c => {
 
 router.post('/get-id', async c => {
   console.log('/get-id', new Date())
-  const { _id } = await c.req.json()
-  console.log('_id', _id)
-  const user = await Model.find({ _id })
+  const { _id, username } = await c.req.json()
+
+  const user = await Model.find(_id ? { _id } : { username })
   return c.json(user)
 })

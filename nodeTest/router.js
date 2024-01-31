@@ -23,9 +23,9 @@ router.post('/set-user', async (req, res) => {
 
 router.post('/get-id', async (req, res) => {
   console.log('/get-id', new Date())
-  const { _id } = await req.body
+  const { _id, username } = await req.body
 
-  const user = await Model.find({ _id })
+  const user = await Model.find(_id ? { _id } : { username })
   return res.send(user)
 })
 
