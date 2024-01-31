@@ -21,4 +21,12 @@ router.post('/set-user', async (req, res) => {
   return res.send({ created: true })
 })
 
+router.post('/get-id', async (req, res) => {
+  console.log('/get-id', new Date())
+  const { _id } = await req.body
+
+  const user = await Model.find({ _id })
+  return res.send(user)
+})
+
 export default router

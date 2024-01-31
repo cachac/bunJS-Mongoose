@@ -36,3 +36,14 @@ error: connection 2 to <SERVER_IP_ADDRESS>:27017 closed
 ~~~
 
 Try again and it works :/
+
+# Load testing
+export PORT=
+hey  -z 10s -q 1000  -c 30  -t 30  http://localhost:$PORT/get-users
+
+hey  -z 3s  -c 3   -t 30  -m  POST -T "application/json"  -d '{ "username":"${date}" }' http://localhost:$PORT/set-user
+
+hey  -z 3s  -c 3   -t 30  -m  POST -T "application/json"  -d '{ "_id":"65baac63a989afefdc149a7e" }' http://localhost:$PORT/get-id
+
+
+

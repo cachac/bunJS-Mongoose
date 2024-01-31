@@ -17,3 +17,11 @@ router.post('/set-user', async c => {
   await new Model({ username }).save()
   return c.json({ created: true })
 })
+
+router.post('/get-id', async c => {
+  console.log('/get-id', new Date())
+  const { _id } = await c.req.json()
+  console.log('_id', _id)
+  const user = await Model.find({_id})
+  return c.json(user)
+})
