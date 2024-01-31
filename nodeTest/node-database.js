@@ -8,12 +8,12 @@ export default {
     // const strconn = `mongodb+srv://training:dlpsKAhjAh6UN8qO@freetesting.nrujao5.mongodb.net/?retryWrites=true&w=majority`
 
     // serverless
-    const strconn = `mongodb+srv://qa-storylabs.0xdvf.mongodb.net/BUNTEST?authMechanism=MONGODB-X509&authSource=%24external`
+    const strconn = `mongodb+srv://training:dlpsKAhjAh6UN8qO@qa-storylabs.0xdvf.mongodb.net/BUNTEST?retryWrites=true&w=majority`
     const db = mongoose.connection
 
     db.on('error', err => console.error('> error occurred from the database', err))
     db.on('connected', () => console.log('connected'))
-    db.once('open', () => console.log('> successfully open the database'))
+    db.once('open', () => console.log('> NODE successfully open the database'))
     db.on('disconnected', () => console.log('disconnected'))
     db.on('reconnected', () => console.log('reconnected'))
     db.on('disconnecting', () => console.log('disconnecting'))
@@ -23,11 +23,6 @@ export default {
       socketTimeoutMS: 30000,
       connectTimeoutMS: 5000,
       maxPoolSize: 200
-      // writeConcern: {
-      //   w: 'majority',
-      //   j: true,
-      //   wtimeout: 5000
-      // }
     })
   }
 }

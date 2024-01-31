@@ -1,7 +1,8 @@
+import { serve } from '@hono/node-server'
 import { Hono } from 'hono'
 import { cors } from 'hono/cors'
 import { router } from './router.js'
-import db from './bun-database.js'
+import db from './node-database.js'
 
 const app = new Hono()
 
@@ -22,12 +23,12 @@ process.on('unhandledRejection', err => {
   process.exit(1)
 })
 
-console.log(`BunJS - Mongoose Testing listening to port 3000 - BUN JS | REST 🚀`)
+console.log(`NodeJS/Hono - Mongoose Testing listening to port 5000 - NODE JS | REST 🚀`)
 
 // START server
 db.setConnection()
 
-export default {
+serve ({
   fetch: app.fetch,
-  port: 3000
-}
+  port: 5000
+})
