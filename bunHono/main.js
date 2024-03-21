@@ -29,5 +29,5 @@ db.setConnection()
 
 export default {
   fetch: app.fetch,
-  port: 3001
+  port: 3000
 }
