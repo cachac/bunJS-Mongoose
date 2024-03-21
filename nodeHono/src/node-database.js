@@ -14,7 +14,7 @@ export default {
     db.on('connected', () => console.log('connected'))
     db.once('open', () => {
       console.timeEnd('CONN')
-      console.log('> BUN successfully open the database')
+      console.log('> NODE successfully open the database')
     })
     db.on('disconnected', () => console.log('disconnected'))
     db.on('reconnected', () => console.log('reconnected'))
