@@ -1,11 +1,11 @@
 {
   "name": "test",
   "version": "1.0.0",
-  "module": "src/main.js",
+  "module": "bunHono/main.js",
   "type": "module",
   "scripts": {
-    "start": "bun run src/main.js",
-    "dev": "bun --hot run src/main.js",
+    "start": "bun run bunHono/main.js",
+    "dev": "bun --hot run bunHono/main.js",
     "install:clean": "rm -rf node_modules/ && rm -rf dist/ && rm -rf package-lock.json && npm install && npm run dev"
   },
   "dependencies": {
