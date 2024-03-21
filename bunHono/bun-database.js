@@ -4,7 +4,7 @@ mongoose.set('debug', true)
 
 export default {
   setConnection() {
-    // serverless
+    // Mongo Atlas serverless instance - just for testing.
     const strconn = `mongodb+srv://serverless:cKI27zvgYFSJIbIh@qa-storylabs.0xdvf.mongodb.net/BUNTEST?retryWrites=true&w=majority`
     const db = mongoose.connection
 
