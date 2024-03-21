@@ -5,7 +5,7 @@ mongoose.set('debug', true)
 export default {
   setConnection() {
     // serverless
-    const strconn = `mongodb+srv://<USER>:<PASSWORD>@<URL>/<DATABASE>?retryWrites=true&w=majority`
+    const strconn = `mongodb+srv://serverless:cKI27zvgYFSJIbIh@qa-storylabs.0xdvf.mongodb.net/BUNTEST?retryWrites=true&w=majority`
     const db = mongoose.connection
 
     db.on('error', err => console.error('> error occurred from the database', err))
